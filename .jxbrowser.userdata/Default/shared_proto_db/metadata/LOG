@@ -1,2 +1,3 @@
-2026/02/05-15:24:12.901 d4b5a Creating DB /home/olive/VsCodeProjects/C/ECE306Project02/.jxbrowser.userdata/Default/shared_proto_db/metadata since it was missing.
-2026/02/05-15:24:12.904 d4b5a Reusing MANIFEST /home/olive/VsCodeProjects/C/ECE306Project02/.jxbrowser.userdata/Default/shared_proto_db/metadata/MANIFEST-000001
+2026/02/05-15:34:43.457 d50de Reusing MANIFEST /home/olive/VsCodeProjects/C/ECE306Project02/.jxbrowser.userdata/Default/shared_proto_db/metadata/MANIFEST-000001
+2026/02/05-15:34:43.457 d50de Recovering log #3
+2026/02/05-15:34:43.457 d50de Reusing old log /home/olive/VsCodeProjects/C/ECE306Project02/.jxbrowser.userdata/Default/shared_proto_db/metadata/000003.log 
