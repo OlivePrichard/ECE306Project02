@@ -11,6 +11,9 @@
 // Main
 void main(void);
 
+// Carlson StateMachine
+void Carlson_StateMachine(void);
+
 // Initialization
 void Init_Conditions(void);
 
