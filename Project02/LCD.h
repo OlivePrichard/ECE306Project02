@@ -2,6 +2,8 @@
 // Macro Configurations for the LCD
 //------------------------------------------------------------------------------
 // LCD
+//#include "ports.h"
+//#include "msp430.h"
 void enable_display_update(void);
 void update_string(char *string_data, int string);
 void Init_LCD(void);
@@ -40,6 +42,16 @@ void Display_Update(char p_L1,char p_L2,char p_L3,char p_L4);
 int wait_for_character(void);
 void print_CR(void);
 void outchar(char character);
+
+//void enable_backlight(void) {
+//    P6OUT |=  LCD_BACKLITE;
+//}
+//void disable_backlight(void) {
+//    P6OUT &= ~LCD_BACKLITE;
+//}
+//void toggle_backlight(void) {
+//    P6OUT ^=  LCD_BACKLITE;
+//}
 
 //------------------------------------------------------------------------------
 

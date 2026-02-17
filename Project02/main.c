@@ -38,6 +38,7 @@ void main(void){
   Init_Conditions();                   // Initialize Variables and Initial Conditions
   Init_Timers();                       // Initialize Timers
   Init_LCD();                          // Initialize LCD
+//  enable_backlight();
 //P2OUT &= ~RESET_LCD;
   // Place the contents of what you want on the display, in between the quotes
 // Limited to 10 characters per line
