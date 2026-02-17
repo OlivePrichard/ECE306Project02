@@ -204,10 +204,80 @@ void Init_Port4(void) {     // Configure Port 4
     P4SEL1 &= ~UCB1SOMI;
 }
 
-void Init_Port5(void) {
+void Init_Port5(void) {  // Configure Port 5
 
+    P5SEL0 =   0x00;     // GPIO
+    P5SEL0 =   0x00;
+
+    P5DIR  =   0x00;     // INPUT
+    P5OUT  =   0x00;     // LOW
+
+    // Pin 1
+    P5SELC |=  V_BAT;    // ADC
+
+    // Pin 2
+    P5SELC |=  V_5_0;    // ADC
+
+    // Pin 3
+    P5SELC |=  V_DAC;    // ADC
+
+    // Pin 4
+    P5SELC |=  V_3_3;    // ADC
+
+    // Pin 5
+    // TODO: FIX THIS
+    P5SEL0 &= ~IOT_BOOT; // GPIO
+    P5SEL1 &= ~IOT_BOOT;
+    P5DIR  &= ~IOT_BOOT; // INPUT
 }
 
-void Init_Port6(void) {
+void Init_Port6(void) {      // Configure Port 6
 
+    P6SEL0 =   0x00;         // GPIO
+    P6SEL0 =   0x00;
+
+    P6DIR  =   0x00;         // INPUT
+    P6OUT  =   0x00;         // LOW
+
+    // Pin 0
+    P6SEL0 &= ~LCD_BACKLITE; // GPIO
+    P6SEL1 &= ~LCD_BACKLITE;
+    P6OUT  &= ~LCD_BACKLITE; // LOW
+    P6DIR  |=  LCD_BACKLITE; // OUTPUT
+
+    // Pin 1
+    P6SEL0 &= ~R_FORWARD;    // GPIO
+    P6SEL1 &= ~R_FORWARD;
+    P6OUT  &= ~R_FORWARD;    // LOW
+    P6DIR  |=  R_FORWARD;    // OUTPUT
+
+    // Pin 2
+    P6SEL0 &= ~R_REVERSE;    // GPIO
+    P6SEL1 &= ~R_REVERSE;
+    P6OUT  &= ~R_REVERSE;    // LOW
+    P6DIR  |=  R_REVERSE;    // OUTPUT
+
+    // Pin 3
+    P6SEL0 &= ~L_FORWARD;    // GPIO
+    P6SEL1 &= ~L_FORWARD;
+    P6OUT  &= ~L_FORWARD;    // LOW
+    P6DIR  |=  L_FORWARD;    // OUTPUT
+
+    // Pin 4
+    P6SEL0 &= ~L_REVERSE;    // GPIO
+    P6SEL1 &= ~L_REVERSE;
+    P6OUT  &= ~L_REVERSE;    // LOW
+    P6DIR  |=  L_REVERSE;    // OUTPUT
+
+    // Pin 5
+    // TODO: FIX THIS
+    P6SEL0 &= ~P6_5;         // GPIO
+    P6SEL1 &= ~P6_5;
+    P6DIR  &= ~P6_5;         // INPUT
+
+    // Pin 6
+    P6SEL0 &= ~GRN_LED;      // GPIO
+    P6SEL1 &= ~GRN_LED;
+    P6OUT  &= ~GRN_LED;      // LOW
+    P6DIR  |=  GRN_LED;      // OUTPUT
 }
