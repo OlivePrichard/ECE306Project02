@@ -52,7 +52,7 @@
 #define UCA1RXD                (0x04) // 4.2 Back Channel UCA1RXD
 #define UCA1TXD                (0x08) // 4.3 Back Channel UCA1TXD
 #define UCB1_CS_LCD            (0x10) // 4.4 Chip Select
-#define UCB1CLK                (0x20) // 4.5 SPI mode - clock output—UCB1CLK
+#define UCB1CLK                (0x20) // 4.5 SPI mode - clock outputï¿½UCB1CLK
 #define UCB1SIMO               (0x40) // 4.6 UCB1SIMO
 #define UCB1SOMI               (0x80) // 4.7 UCB1SOMI
 
@@ -65,9 +65,9 @@
 
 // Port 6 Pins
 #define LCD_BACKLITE           (0x01) // 6.4 LCD_BACKLITE
-#define R_FORWARD              (0x02) // 6.0 P6_0_PWM
-#define R_REVERSE              (0x04) // 6.1 P6_1_PWM
-#define L_FORWARD              (0x08) // 6.2 P6_2_PWM
-#define L_REVERSE              (0x10) // 6.3 P6_3_PWM
+#define L_FORWARD              (0x02) // 6.0 P6_0_PWM
+#define R_FORWARD              (0x04) // 6.3 P6_1_PWM
+#define L_REVERSE              (0x08) // 6.2 P6_2_PWM
+#define R_REVERSE              (0x10) // 6.3 P6_3_PWM
 #define P6_5                   (0x20) // 6.5
 #define GRN_LED                (0x40) // 6.6 GREEN LED

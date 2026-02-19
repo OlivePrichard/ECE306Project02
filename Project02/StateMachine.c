@@ -8,6 +8,12 @@
 #include "macros.h"
 
 void Carlson_StateMachine(void){
+    if (!(P4IN & SW1)) {
+        Init_Port3(USE_GPIO);
+    } else if (!(P2IN & SW2)) {
+        Init_Port3(USE_SMCLK);
+    }
+
     switch(Time_Sequence){
       case 250:                        //
         if(one_time){

@@ -10,7 +10,7 @@
 void Init_Ports(void) {
     Init_Port1();
     Init_Port2();
-    Init_Port3();
+    Init_Port3(USE_GPIO);
     Init_Port4();
     Init_Port5();
     Init_Port6();
@@ -108,52 +108,57 @@ void Init_Port2(void) {     // Configure Port 2
     P2SEL1 |=  LFXIN;
 }
 
-void Init_Port3(void) {      // Configure Port 3
+void Init_Port3(char smclk) { // Configure Port 3
 
-    P3SEL0 =   0x00;         // GPIO
+    P3SEL0 =   0x00;          // GPIO
     P3SEL0 =   0x00;
 
-    P3DIR  =   0x00;         // INPUT
-    P3OUT  =   0x00;         // LOW
+    P3DIR  =   0x00;          // INPUT
+    P3OUT  =   0x00;          // LOW
 
     // Pin 0
     // TODO: FIX THIS
-    P3SEL0 &= ~TEST_PROBE;   // GPIO
+    P3SEL0 &= ~TEST_PROBE;    // GPIO
     P3SEL1 &= ~TEST_PROBE;
-    P3DIR  &= ~TEST_PROBE;   // INPUT
+    P3DIR  &= ~TEST_PROBE;    // INPUT
 
     // Pin 1
-    P3SELC |=  OA2O;         // OA20
+    P3SELC |=  OA2O;          // OA20
 
     // Pin 2
-    P3SELC |=  OA2N;         // OA2-
+    P3SELC |=  OA2N;          // OA2-
 
     // Pin 3
-    P3SELC |=  OA2P;         // OA2+
+    P3SELC |=  OA2P;          // OA2+
 
     // Pin 4
-    // TODO: FIX THIS
-    P3SEL0 &= ~SMCLK_OUT;    // GPIO
-    P3SEL1 &= ~SMCLK_OUT;
-    P3DIR  &= ~SMCLK_OUT;    // INPUT
+    if (smclk) {
+        P3SEL0 |=  SMCLK_OUT; // SMCLK
+        P3SEL1 &= ~SMCLK_OUT;
+        P3DIR  |=  SMCLK_OUT;
+    } else {
+        P3SEL0 &= ~SMCLK_OUT; // GPIO
+        P3SEL1 &= ~SMCLK_OUT;
+        P3DIR  &= ~SMCLK_OUT; // INPUT
+    }
 
     // Pin 5
     // TODO: FIX THIS
-    P3SEL0 &= ~DAC_CNTL;     // GPIO
+    P3SEL0 &= ~DAC_CNTL;      // GPIO
     P3SEL1 &= ~DAC_CNTL;
-    P3DIR  &= ~DAC_CNTL;     // INPUT
+    P3DIR  &= ~DAC_CNTL;      // INPUT
 
     // Pin 6
     // TODO: FIX THIS
-    P3SEL0 &= ~IOT_LINK_GRN; // GPIO
+    P3SEL0 &= ~IOT_LINK_GRN;  // GPIO
     P3SEL1 &= ~IOT_LINK_GRN;
-    P3DIR  &= ~IOT_LINK_GRN; // INPUT
+    P3DIR  &= ~IOT_LINK_GRN;  // INPUT
 
     // Pin 7
     // TODO: FIX THIS
-    P3SEL0 &= ~IOT_EN;      // GPIO
+    P3SEL0 &= ~IOT_EN;        // GPIO
     P3SEL1 &= ~IOT_EN;
-    P3DIR  &= ~IOT_EN;      // INPUT
+    P3DIR  &= ~IOT_EN;        // INPUT
 }
 
 void Init_Port4(void) {     // Configure Port 4
@@ -246,28 +251,28 @@ void Init_Port6(void) {      // Configure Port 6
     P6DIR  |=  LCD_BACKLITE; // OUTPUT
 
     // Pin 1
-    P6SEL0 &= ~R_FORWARD;    // GPIO
-    P6SEL1 &= ~R_FORWARD;
-    P6OUT  &= ~R_FORWARD;    // LOW
-    P6DIR  |=  R_FORWARD;    // OUTPUT
-
-    // Pin 2
-    P6SEL0 &= ~R_REVERSE;    // GPIO
-    P6SEL1 &= ~R_REVERSE;
-    P6OUT  &= ~R_REVERSE;    // LOW
-    P6DIR  |=  R_REVERSE;    // OUTPUT
-
-    // Pin 3
     P6SEL0 &= ~L_FORWARD;    // GPIO
     P6SEL1 &= ~L_FORWARD;
     P6OUT  &= ~L_FORWARD;    // LOW
     P6DIR  |=  L_FORWARD;    // OUTPUT
 
-    // Pin 4
+    // Pin 2
+    P6SEL0 &= ~R_FORWARD;    // GPIO
+    P6SEL1 &= ~R_FORWARD;
+    P6OUT  &= ~R_FORWARD;    // LOW
+    P6DIR  |=  R_FORWARD;    // OUTPUT
+
+    // Pin 3
     P6SEL0 &= ~L_REVERSE;    // GPIO
     P6SEL1 &= ~L_REVERSE;
     P6OUT  &= ~L_REVERSE;    // LOW
     P6DIR  |=  L_REVERSE;    // OUTPUT
+
+    // Pin 4
+    P6SEL0 &= ~R_REVERSE;    // GPIO
+    P6SEL1 &= ~R_REVERSE;
+    P6OUT  &= ~R_REVERSE;    // LOW
+    P6DIR  |=  R_REVERSE;    // OUTPUT
 
     // Pin 5
     // TODO: FIX THIS

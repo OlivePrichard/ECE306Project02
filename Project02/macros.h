@@ -21,4 +21,7 @@
 #define TEST_PROBE           (0x01) // 0 TEST PROBE
 #define TRUE                 (0x01) //
 
+#define USE_GPIO             (0x00)
+#define USE_SMCLK            (0x01)
+
 #endif /* MACROS_H_ */
