@@ -14,6 +14,7 @@ C_SRCS += \
 ../led.c \
 ../main.c \
 ../ports.c \
+../switches.c \
 ../system.c 
 
 C_DEPS += \
@@ -24,6 +25,7 @@ C_DEPS += \
 ./led.d \
 ./main.d \
 ./ports.d \
+./switches.d \
 ./system.d 
 
 OBJS += \
@@ -34,6 +36,7 @@ OBJS += \
 ./led.obj \
 ./main.obj \
 ./ports.obj \
+./switches.obj \
 ./system.obj 
 
 OBJS__QUOTED += \
@@ -44,6 +47,7 @@ OBJS__QUOTED += \
 "led.obj" \
 "main.obj" \
 "ports.obj" \
+"switches.obj" \
 "system.obj" 
 
 C_DEPS__QUOTED += \
@@ -54,6 +58,7 @@ C_DEPS__QUOTED += \
 "led.d" \
 "main.d" \
 "ports.d" \
+"switches.d" \
 "system.d" 
 
 C_SRCS__QUOTED += \
@@ -64,6 +69,7 @@ C_SRCS__QUOTED += \
 "../led.c" \
 "../main.c" \
 "../ports.c" \
+"../switches.c" \
 "../system.c" 
 
 

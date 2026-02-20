@@ -25,5 +25,10 @@ char change;
 unsigned int wheel_move;
 char forward;
 
+int start_sequence;
+int run_sequence;
+int shape_selection;
+int shape_count;
+unsigned int timing;
 
 #endif /* GLOBALS_H_ */

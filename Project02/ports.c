@@ -117,10 +117,10 @@ void Init_Port3(char smclk) { // Configure Port 3
     P3OUT  =   0x00;          // LOW
 
     // Pin 0
-    // TODO: FIX THIS
     P3SEL0 &= ~TEST_PROBE;    // GPIO
     P3SEL1 &= ~TEST_PROBE;
-    P3DIR  &= ~TEST_PROBE;    // INPUT
+    P3DIR  |=  TEST_PROBE;    // OUTPUT
+    P3OUT  &= ~TEST_PROBE;
 
     // Pin 1
     P3SELC |=  OA2O;          // OA20
@@ -196,15 +196,15 @@ void Init_Port4(void) {     // Configure Port 4
     P4OUT  |=  UCB1_CS_LCD; // HIGH
     P4DIR  |=  UCB1_CS_LCD; // OUTPUT
 
-    // Pin 3
+    // Pin 5
     P4SEL0 |=  UCB1CLK;     // SPI 1 CLK
     P4SEL1 &= ~UCB1CLK;
 
-    // Pin 3
+    // Pin 6
     P4SEL0 |=  UCB1SIMO;    // SPI 1 MOSI
     P4SEL1 &= ~UCB1SIMO;
 
-    // Pin 3
+    // Pin 7
     P4SEL0 |=  UCB1SOMI;    // SPI 1 MISO
     P4SEL1 &= ~UCB1SOMI;
 }
